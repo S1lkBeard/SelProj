@@ -99,10 +99,7 @@ public class Task01 {
         baseMenu = driver.findElement(By.xpath(
                 "//input[contains(@id, 'date_selector_crm_business_trip_returnDatePlan')]"));
         baseMenu.sendKeys("30.10.2022");
-
-        //Проверка корректности заполненных полей
-
-
+        
         //Сохранение и закрытие
         baseMenu = driver.findElement(By.xpath(
                 "//button[@data-action='{\"route\":\"crm_business_trip_index\"}']"));
