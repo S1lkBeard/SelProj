@@ -99,7 +99,7 @@ public class Task01 {
         baseMenu = driver.findElement(By.xpath(
                 "//input[contains(@id, 'date_selector_crm_business_trip_returnDatePlan')]"));
         baseMenu.sendKeys("30.10.2022");
-
+        
         //—охранение и закрытие
         baseMenu = driver.findElement(By.xpath(
                 "//button[@data-action='{\"route\":\"crm_business_trip_index\"}']"));
@@ -112,7 +112,7 @@ public class Task01 {
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(
                 "//*[contains(text(), '—писок командируемых сотрудников не может быть пустым')]"))));
         Assert.assertTrue("«аголовок не отобразилс€", baseMenu.isDisplayed());
-        Assert.assertTrue("“екст заголовка не совпадае",
+        Assert.assertTrue("“екст заголовка не совпадает",
                 "—писок командируемых сотрудников не может быть пустым".equals(baseMenu.getText()));
 
         try {
