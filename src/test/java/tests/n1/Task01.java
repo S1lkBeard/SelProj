@@ -35,7 +35,7 @@ public class Task01 {
 
     @Test
     public void test() {
-        //Авторизация
+        //РђРІС‚РѕСЂРёР·Р°С†РёСЏ
         baseMenu = driver.findElement(By.xpath("//*[@id=\"prependedInput\"]"));
         fillInputField(baseMenu, "Taraskina Valeriya");
         baseMenu = driver.findElement(By.xpath("//*[@id=\"prependedInput2\"]"));
@@ -43,57 +43,57 @@ public class Task01 {
         baseMenu = driver.findElement(By.xpath("//*[@id=\"_submit\"]"));
         baseMenu.click();
 
-        //Проверка наличия заголовка
+        //РџСЂРѕРІРµСЂРєР° РЅР°Р»РёС‡РёСЏ Р·Р°РіРѕР»РѕРІРєР°
         baseMenu = driver.findElement(By.xpath("//h1[@class='oro-subtitle']"));
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//h1[@class='oro-subtitle']"))));
-        Assert.assertTrue("Заголовок не отобразился", baseMenu.isDisplayed());
-        Assert.assertTrue("Текст заголовка не совпадает", "Панель быстрого запуска".equals(baseMenu.getText()));
+        Assert.assertTrue("Р—Р°РіРѕР»РѕРІРѕРє РЅРµ РѕС‚РѕР±СЂР°Р·РёР»СЃСЏ", baseMenu.isDisplayed());
+        Assert.assertTrue("РўРµРєСЃС‚ Р·Р°РіРѕР»РѕРІРєР° РЅРµ СЃРѕРІРїР°РґР°РµС‚", "РџР°РЅРµР»СЊ Р±С‹СЃС‚СЂРѕРіРѕ Р·Р°РїСѓСЃРєР°".equals(baseMenu.getText()));
 
-        //Выбор "Командировки" в меню "Расходы"
-        baseMenu = driver.findElement(By.xpath("//div/ul/li/a/span[contains(text(), 'Расходы')]"));
+        //Р’С‹Р±РѕСЂ "РљРѕРјР°РЅРґРёСЂРѕРІРєРё" РІ РјРµРЅСЋ "Р Р°СЃС…РѕРґС‹"
+        baseMenu = driver.findElement(By.xpath("//div/ul/li/a/span[contains(text(), 'Р Р°СЃС…РѕРґС‹')]"));
         baseMenu.click();
         baseMenu = driver.findElement(By.xpath("//a[@href='/business-trip/']/span"));
         baseMenu.click();
 
-        //Создание командировки
+        //РЎРѕР·РґР°РЅРёРµ РєРѕРјР°РЅРґРёСЂРѕРІРєРё
         baseMenu = driver.findElement(By.xpath(
                 "//div[@class='btn-group']/div/a[@href='/business-trip/create/']"));
         baseMenu.click();
 
-        //Проверка наличия заголовка
+        //РџСЂРѕРІРµСЂРєР° РЅР°Р»РёС‡РёСЏ Р·Р°РіРѕР»РѕРІРєР°
         baseMenu = driver.findElement(By.xpath("//h1[@class='user-name']"));
-        Assert.assertTrue("Заголовок не отобразился", baseMenu.isDisplayed());
-        Assert.assertTrue("Текст заголовка не совпадает", "Создать командировку".equals(baseMenu.getText()));
+        Assert.assertTrue("Р—Р°РіРѕР»РѕРІРѕРє РЅРµ РѕС‚РѕР±СЂР°Р·РёР»СЃСЏ", baseMenu.isDisplayed());
+        Assert.assertTrue("РўРµРєСЃС‚ Р·Р°РіРѕР»РѕРІРєР° РЅРµ СЃРѕРІРїР°РґР°РµС‚", "РЎРѕР·РґР°С‚СЊ РєРѕРјР°РЅРґРёСЂРѕРІРєСѓ".equals(baseMenu.getText()));
 
-        //Заполнение полей, выбор подразделения
+        //Р—Р°РїРѕР»РЅРµРЅРёРµ РїРѕР»РµР№, РІС‹Р±РѕСЂ РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ
         baseMenu = driver.findElement(By.xpath("//select[@name='crm_business_trip[businessUnit]']"));
         baseMenu.click();
         secondMenu = driver.findElement(By.xpath(
-                "//option[contains(text(), 'Отдел внутренней разработки')]"));
+                "//option[contains(text(), 'РћС‚РґРµР» РІРЅСѓС‚СЂРµРЅРЅРµР№ СЂР°Р·СЂР°Р±РѕС‚РєРё')]"));
         secondMenu.click();
 
-        //Выбор организации
+        //Р’С‹Р±РѕСЂ РѕСЂРіР°РЅРёР·Р°С†РёРё
         baseMenu = driver.findElement(By.xpath("//a[@id='company-selector-show']"));
         baseMenu.click();
         baseMenu = driver.findElement(By.xpath("//div[@class='select2-container select2 input-widget']"));
         baseMenu.click();
         baseMenu = driver.findElement(By.xpath(
-                "//div[contains(text(), '(Хром) Призрачная Организация Охотников')]"));
+                "//div[contains(text(), '(РҐСЂРѕРј) РџСЂРёР·СЂР°С‡РЅР°СЏ РћСЂРіР°РЅРёР·Р°С†РёСЏ РћС…РѕС‚РЅРёРєРѕРІ')]"));
         baseMenu.click();
 
-        //Выбор чекбокса
+        //Р’С‹Р±РѕСЂ С‡РµРєР±РѕРєСЃР°
         baseMenu = driver.findElement(By.xpath("//input[@value='1']"));
         baseMenu.click();
 
-        //Выбор городов выбытия и прибытия
+        //Р’С‹Р±РѕСЂ РіРѕСЂРѕРґРѕРІ РІС‹Р±С‹С‚РёСЏ Рё РїСЂРёР±С‹С‚РёСЏ
         baseMenu = driver.findElement(By.xpath("//input[@name='crm_business_trip[departureCity]']"));
         baseMenu.clear();
-        baseMenu.sendKeys("Россия, Москва");
+        baseMenu.sendKeys("Р РѕСЃСЃРёСЏ, РњРѕСЃРєРІР°");
         baseMenu = driver.findElement(By.xpath("//input[@name='crm_business_trip[arrivalCity]']"));
         baseMenu.clear();
-        baseMenu.sendKeys("Россия, Москва");
+        baseMenu.sendKeys("Р РѕСЃСЃРёСЏ, РњРѕСЃРєРІР°");
 
-        //Выбор дат
+        //Р’С‹Р±РѕСЂ РґР°С‚
         baseMenu = driver.findElement(By.xpath(
                 "//input[contains(@id, 'date_selector_crm_business_trip_departureDatePlan')]"));
         baseMenu.sendKeys("29.10.2022");
@@ -101,20 +101,20 @@ public class Task01 {
                 "//input[contains(@id, 'date_selector_crm_business_trip_returnDatePlan')]"));
         baseMenu.sendKeys("30.10.2022");
 
-        //Сохранение и закрытие
+        //РЎРѕС…СЂР°РЅРµРЅРёРµ Рё Р·Р°РєСЂС‹С‚РёРµ
         baseMenu = driver.findElement(By.xpath(
                 "//button[@data-action='{\"route\":\"crm_business_trip_index\"}']"));
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].click()", baseMenu);
 
-        //Проверка появления сообщения
+        //РџСЂРѕРІРµСЂРєР° РїРѕСЏРІР»РµРЅРёСЏ СЃРѕРѕР±С‰РµРЅРёСЏ
         baseMenu = driver.findElement(By.xpath(
-                "//*[contains(text(), 'Список командируемых сотрудников не может быть пустым')]"));
+                "//*[contains(text(), 'РЎРїРёСЃРѕРє РєРѕРјР°РЅРґРёСЂСѓРµРјС‹С… СЃРѕС‚СЂСѓРґРЅРёРєРѕРІ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РїСѓСЃС‚С‹Рј')]"));
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(
-                "//*[contains(text(), 'Список командируемых сотрудников не может быть пустым')]"))));
-        Assert.assertTrue("Заголовок не отобразился", baseMenu.isDisplayed());
-        Assert.assertTrue("Текст заголовка не совпадает",
-                "Список командируемых сотрудников не может быть пустым".equals(baseMenu.getText()));
+                "//*[contains(text(), 'РЎРїРёСЃРѕРє РєРѕРјР°РЅРґРёСЂСѓРµРјС‹С… СЃРѕС‚СЂСѓРґРЅРёРєРѕРІ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РїСѓСЃС‚С‹Рј')]"))));
+        Assert.assertTrue("Р—Р°РіРѕР»РѕРІРѕРє РЅРµ РѕС‚РѕР±СЂР°Р·РёР»СЃСЏ", baseMenu.isDisplayed());
+        Assert.assertTrue("РўРµРєСЃС‚ Р·Р°РіРѕР»РѕРІРєР° РЅРµ СЃРѕРІРїР°РґР°РµС‚",
+                "РЎРїРёСЃРѕРє РєРѕРјР°РЅРґРёСЂСѓРµРјС‹С… СЃРѕС‚СЂСѓРґРЅРёРєРѕРІ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РїСѓСЃС‚С‹Рј".equals(baseMenu.getText()));
 
         try {
             Thread.sleep(3000);
@@ -132,6 +132,6 @@ public class Task01 {
         element.click();
         element.sendKeys(value);
         boolean checkField = wait.until(ExpectedConditions.attributeContains(element, "value", value));
-        Assert.assertTrue("Поле не было заполнено", checkField);
+        Assert.assertTrue("РџРѕР»Рµ РЅРµ Р±С‹Р»Рѕ Р·Р°РїРѕР»РЅРµРЅРѕ", checkField);
     }
 }
